@@ -1,0 +1,63 @@
+﻿@model HandyApp.Models.ViewModels.AsignVM
+
+
+
+
+<form method="post" asp-action="Create">
+    <div class="container">
+        <div class="form-row">
+            <div class="col-md-12">
+                <h1>Customer task</h1>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-12"><strong style="margin-right: 7px;">Name :</strong><span style="margin-top: 1px;">harry</span></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="form-row">
+            <div class="col-md-12"><strong>Tasks :</strong><span style="margin-left: 12px;">paint shed</span></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="form-row">
+            <div class="col-md-12"><strong>Telephone number :</strong><span style="margin-left: 12px;">000000000000</span></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="form-row">
+            <div class="col"><strong>Address :&nbsp;</strong><span>123 Fake Street</span><span></span></div>
+            <div class="col-md-12" style="margin-top: 31px;">
+                <h3 style="margin-left: 0px;">Assign tasks</h3>
+            </div>
+        </div>
+        
+
+        <div class="form-row">
+            <div class="col-md-3">
+                <label style="margin-left: 47px;">Name of customer</label>
+                <input asp-for="Asign.Name" class="form-control" type="text" value="customers name" style="margin-top: 2px;">
+                <label style="margin-top: 8px;">Employee Assign&nbsp;</label>
+                <select asp-for="Asign.EmployeeNameId" asp-items="@Model.TypeDropDown" class="form-control">
+                    <option selected>-- Select option</option>
+                </select>
+                <label style="margin-top: 8px;">Employee Assign&nbsp;</label>
+                <select asp-for="Asign.Status" class="form-control">
+                    <option value="in progress" selected="">in progress</option>
+                    <option value="completed">completed</option>
+                </select>
+            </div>
+          
+                <div class="col-md-3">
+                    <label style="margin-left: 54px;">Tasks&nbsp;</label>
+                    <input asp-for="Asign.Tasks" class="form-control" value="Enter tasks here" style="margin-top: 4px;">
+                
+                    <label style="margin-top: 8px;">Telephone</label>
+                    <input asp-for="Asign.Telephone" value="Type telephone" class="form-control" type="text">
+                    <label tyle="margin-top: 8px;">Address</label>
+                    <input asp-for="Asign.Address" class="form-control" value="enter address" type="text"></div>
+            </div>
+            <button class="btn btn-primary" type="submit" style="margin-top: 35px;margin-left: 34px;">Submit</button>
+        </div>
+    
+</form>

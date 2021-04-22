@@ -1,0 +1,35 @@
+﻿
+@using Microsoft.AspNetCore.Http.Features
+@model IEnumerable<HandyApp.Models.Employee>
+
+
+
+
+<h1 style="margin-left: 52px;margin-top: 21px;">Employee List</h1>
+<div class="table-responsive" style="margin-top: 12px;">
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="margin-top: 0px;width: 143px;">employee ID</th>
+                <th style="margin-top: 0px;">Name</th>
+                <th style="margin-top: 0px;">Speciality</th>
+                <th style="margin-top: 0px;"><a class="btn btn-primary" type="button" style="background: var(--purple);color: var(--white);" asp-controller="Employee" asp-action="Create">Add new employee</a></th>
+            </tr>
+        </thead>
+        <tbody>
+        
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td >@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Speciality</td>
+                <td><a class="btn btn-danger" type="button" style="margin-left: 7px; margin-top: 3px; margin-bottom: 4px;" asp-controller="Employee" asp-action="Delete" asp-route-Id ="@item.Id">Delete</a>
+                
+                    </td>
+            </tr>
+        }
+
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,59 @@
+﻿@model IEnumerable<HandyApp.Models.Customer>
+
+
+
+<br/>
+
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="text-primary">Borrowed Items</h2>
+            </div>
+            <div class="col-md-6">Create new Item</div>
+        </div>
+    </div>
+
+   
+    @if(Model.Count() > 0)
+    {
+        <table class="table table-bordered table-striped" style="width:100%">
+            <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                   Task
+                </th>
+                <th>
+                    Telephone
+                </th>
+                <th>
+                    Address
+                </th>
+
+            </tr>
+            </thead>
+            <tbody>
+
+           
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td width="20%">@item.Name</td>
+                    <td width="20%">@item.Tasks</td>
+                    <td width="20%">@item.Telephone</td>
+                    <td width="20%">@item.Address</td>
+
+                </tr>
+            }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No items created yet</p>
+    }
+
+</div>
