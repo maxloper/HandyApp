@@ -24,9 +24,11 @@
                 <td >@item.Id</td>
                 <td>@item.Name</td>
                 <td>@item.Speciality</td>
-                <td><a class="btn btn-danger" type="button" style="margin-left: 7px; margin-top: 3px; margin-bottom: 4px;" asp-controller="Employee" asp-action="Delete" asp-route-Id ="@item.Id">Delete</a>
-                
-                    </td>
+                <td>
+                    <a class="btn btn-danger" type="button" style="margin-left: 7px; margin-top: 3px; margin-bottom: 4px;" asp-controller="Employee" asp-action="Delete" asp-route-Id="@item.Id">Delete</a>
+                    
+
+                </td>
             </tr>
         }
 
