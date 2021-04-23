@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using HandyApp.Models;
+using HandyApp.Models.ViewModels;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace HandyApp.Controllers
 {
@@ -91,6 +93,9 @@ namespace HandyApp.Controllers
             return RedirectToAction("Index");
 
         }
+
+
+
 
 
     }

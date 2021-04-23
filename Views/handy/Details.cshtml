@@ -1,0 +1,62 @@
+﻿@model HandyApp.Models.ViewModels.AsignVM
+
+
+<form>
+    <div class="container">
+        <div class="form-row">
+            <div class="col-md-12">
+                <h1 style="margin-top: 24px;">Customer task</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="form-row">
+            <div class="col-md-12">
+                <strong style="margin-right: 7px;">Name :</strong><span style="margin-top: 1px;">@Model.Asign.Name</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="form-row">
+            <div class="col-md-12">
+                <strong>Tasks :</strong><span style="margin-left: 12px;">@Model.Asign.Tasks</span>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="form-row">
+            <div class="col-md-12">
+                <strong>Address :</strong><span style="margin-left: 12px;">@Model.Asign.Address</span>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="form-row">
+            <div class="col-md-12">
+                <strong>Telephone number :</strong><span style="margin-left: 12px;">@Model.Asign.Telephone</span>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="form-row">
+            <div class="col-md-12">
+                <strong>IMAGE</strong>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="form-row">
+            <div class="col-md-12">
+                <img src="@Model.Asign.ImageUrl">
+            </div>
+        </div>
+    </div>
+
+
+
+    <a class="btn btn-primary" asp-controller="handy" asp-action="Index" type="button" style="margin-top: 15px;">Back</a>
+
+</form>
