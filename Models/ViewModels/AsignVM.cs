@@ -13,7 +13,6 @@ namespace HandyApp.Models.ViewModels
 
         public IEnumerable<SelectListItem> TypeDropDown { get; set; }
 
-       
 
 
    

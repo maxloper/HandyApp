@@ -8,9 +8,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h2 class="text-primary">Borrowed Items</h2>
+                <h2 class="text-primary">Job list</h2>
             </div>
-            <div class="col-md-6">Create new Item</div>
         </div>
     </div>
 
@@ -19,21 +18,23 @@
     {
         <table class="table table-bordered table-striped" style="width:100%">
             <thead>
-            <tr>
-                <th>
-                    Name
-                </th>
-                <th>
-                   Task
-                </th>
-                <th>
-                    Telephone
-                </th>
-                <th>
-                    Address
-                </th>
-
-            </tr>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Task
+                    </th>
+                    <th>
+                        Telephone
+                    </th>
+                    <th>
+                        Address
+                    </th>
+                    <th>
+                        Remove
+                    </th>
+                </tr>
             </thead>
             <tbody>
 
@@ -45,6 +46,7 @@
                     <td width="20%">@item.Tasks</td>
                     <td width="20%">@item.Telephone</td>
                     <td width="20%">@item.Address</td>
+                    <td><a class="btn btn-primary" type="button" style="margin-left: 7px; margin-top: 3px; margin-bottom: 4px;" asp-controller="Customer" asp-action="Delete" asp-route-Id="@item.Id">Delete</a></td>
 
                 </tr>
             }

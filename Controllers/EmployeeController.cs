@@ -20,7 +20,11 @@ namespace HandyApp.Controllers
         public IActionResult Index()
         {
             IEnumerable<Employee> objList = _db.Employees;
+
+          
+
             return View(objList);
+
         }
 
         public IActionResult Create()

@@ -25,12 +25,15 @@ namespace HandyApp.Controllers
 
 
             IEnumerable<Asign> objList = _db.Asigns;
-            
+           IEnumerable<Customer> custObj = _db.Customers;
+
             foreach (var obj in objList)
             {
                 obj.Employee = _db.Employees.FirstOrDefault(u => u.Id == obj.EmployeeNameId);
             }
-           
+
+           ViewBag.Customer = custObj;
+
 
             return View(objList);
         }
@@ -123,7 +126,54 @@ namespace HandyApp.Controllers
             return RedirectToAction("Index");
 
         }
+        public IActionResult Update(int? id)
+        {
 
+            AsignVM asignVM = new AsignVM()
+            {
+                Asign = new Asign(),
+                TypeDropDown = _db.Employees.Select(i => new SelectListItem
+                {
+                    Text = i.Name,
+                    Value = i.Id.ToString()
+                })
+            };
+
+
+
+
+            if (id == null || id == 0)
+            {
+                return NotFound();
+
+            }
+
+           asignVM.Asign = _db.Asigns.Find(id);
+
+            if (asignVM.Asign == null)
+            {
+                return NotFound();
+            }
+
+
+
+            return View(asignVM);
+
+        }
+
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult UpdatePost(AsignVM obj)
+        {
+
+            
+            _db.Asigns.Update(obj.Asign);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
 
     }
 }
