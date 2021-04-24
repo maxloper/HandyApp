@@ -74,14 +74,15 @@ namespace HandyApp.Controllers
         public IActionResult Create(AsignVM obj)
         {
 
-            _db.Asigns.Add(obj.Asign);
+            if (ModelState.IsValid)
+            {
+                _db.Asigns.Add(obj.Asign);
 
-            _db.SaveChanges();
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
 
-
-
-            return RedirectToAction("Index");
-
+            return View(obj);
 
         }
 

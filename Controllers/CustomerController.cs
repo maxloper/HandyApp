@@ -41,14 +41,15 @@ namespace HandyApp.Controllers
 
         public IActionResult Create(Customer obj)
         {
-         
-            _db.Customers.Add(obj);
+            if (ModelState.IsValid)
+            {
+                _db.Customers.Add(obj);
            
-            _db.SaveChanges();
+                _db.SaveChanges();
+                return RedirectToAction("Index", "Home");
+            }
 
-
-
-            return RedirectToAction("Index", "Home");
+            return View(obj);
         }
 
 

@@ -9,13 +9,18 @@
         <h2 class="text-center" style="color: rgb(216,216,216);">Submit job</h2>
         <div class="form-group">
             <input asp-for="Name" class="form-control" type="text" name="name" placeholder="Name" style="background: rgba(255, 255, 255, 0.85);">
+            <span asp-validation-for="Name" class="text-danger"></span>
         </div>
         <div class="form-group">
             <input asp-for="Telephone" class="form-control" type="text" name="Telephone" placeholder="Telephone number" style="margin-top: 10px;">
-            <input asp-for="Address" class="form-control" type="text" name="address" placeholder="address" style="margin-top: 20px;" >
+            <span asp-validation-for="Telephone" class="text-danger" ></span>
+            <input asp-for="Address" class="form-control" type="text" name="address" placeholder="enter street name" style="margin-top: 20px;" >
+            <span asp-validation-for="Address" class="text-danger"></span>
         </div>
         <div class="form-group"><input asp-for="Tasks" class="form-control" name="tasks" placeholder="enter jobs" style="margin-top: 14px;"></div>
-
-        <div class="form-group"><button class="btn btn-primary" type="submit" style="margin-left: 155px;">Sumbit</button></div>
+        <span asp-validation-for="Tasks" class="text-danger" ></span>
+        <div class="form-group"><input asp-for="ImageUrl" class="form-control" name="tasks" placeholder="*Optional* Image URl " style="margin-top: 25px;"></div>
+       
+        <div class="form-group"><button class="btn btn-primary" type="submit" style="margin-left: 155px; margin-top: 20px">Sumbit</button></div>
     </form>
 </section>

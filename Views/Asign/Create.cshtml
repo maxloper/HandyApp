@@ -1,7 +1,13 @@
 ﻿@model HandyApp.Models.ViewModels.AsignVM
 
 
+<button style="margin-top: 20px" class="btn btn-secondary" type="button" onclick="prev()">Prev customer task</button>
+<button style="margin-top: 20px" class="btn btn-primary" type="button" onclick="next()">Next customer task</button>
 
+
+<p id="customerTask"></p>
+
+<br/>
 
 
 <form method="post" asp-action="Create">
@@ -12,53 +18,189 @@
             </div>
         </div>
         <div class="form-row">
-            <div class="col-md-12"><strong style="margin-right: 7px;">Name :</strong><span style="margin-top: 1px;">harry</span></div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="form-row">
-            <div class="col-md-12"><strong>Tasks :</strong><span style="margin-left: 12px;">paint shed</span></div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="form-row">
-            <div class="col-md-12"><strong>Telephone number :</strong><span style="margin-left: 12px;">000000000000</span></div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="form-row">
-            <div class="col"><strong>Address :&nbsp;</strong><span>123 Fake Street</span><span></span></div>
-            <div class="col-md-12" style="margin-top: 31px;">
-                <h3 style="margin-left: 0px;">Assign tasks</h3>
+            <div class="col-md-12">
+                <strong style="margin-right: 7px;">Name :</strong>
+                <p id="name"></p>
             </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="form-row">
+            <div class="col-md-12">
+                <strong>Tasks :</strong>
+                <p id="task"></p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="form-row">
+            <div class="col-md-12">
+                <strong>Telephone number :</strong>
+                <p id="telephone"></p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="form-row">
+            <div>
+                <strong>Address :&nbsp;</strong>
+                <p id="address"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="form-row">
+            <div>
+                <strong>Image url :&nbsp;</strong>
+                <p id="imgUrlString"></p>
+                <div class="row">
+                    <img id="imgShow" src="" alt="">
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <div class="col-md-12" style="margin-top: 31px;">
+            <h3 style="margin-left: 0px;">Assign tasks</h3>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col-md-3">
+            <label style="margin-left: 8px;">Name of customer</label>
+            <input asp-for="Asign.Name" class="form-control" type="text" placeholder="customers name" style="margin-top: 2px;">
+            <span asp-validation-for="Asign.Name" class="text-danger"></span>
+            <label style="margin-top: 8px;">Employee Assign&nbsp;</label>
+            <select asp-for="Asign.EmployeeNameId" asp-items="@Model.TypeDropDown" class="form-control">
+                <option selected>-- Select option</option>
+            </select>
+            <label style="margin-top: 8px;">Employee Assign&nbsp;</label>
+            <select asp-for="Asign.Status" class="form-control">
+                <option value="in progress" selected="">in progress</option>
+                <option value="completed">completed</option>
+            </select>
+        </div>
+
+        <div class="col-md-3">
+            <label style="margin-left: 8px;">Tasks&nbsp;</label>
+            <input asp-for="Asign.Tasks" class="form-control" placeholder="Enter tasks here" style="margin-top: 4px;">
+             <span asp-validation-for="Asign.Tasks" class="text-danger"></span>
+
+            <label style="margin-top: 8px;">Telephone</label>
+            <input asp-for="Asign.Telephone" class="form-control" placeholder="Telephone number" type="text">
+            <span asp-validation-for="Asign.Telephone" class="text-danger"></span>
+            <label tyle="margin-top: 8px;">Address</label>
+            <input asp-for="Asign.Address" class="form-control" placeholder="enter address" type="text">
+            <span asp-validation-for="Asign.Address" class="text-danger"></span>
         </div>
         
-
-        <div class="form-row">
-            <div class="col-md-3">
-                <label style="margin-left: 47px;">Name of customer</label>
-                <input asp-for="Asign.Name" class="form-control" type="text" value="customers name" style="margin-top: 2px;">
-                <label style="margin-top: 8px;">Employee Assign&nbsp;</label>
-                <select asp-for="Asign.EmployeeNameId" asp-items="@Model.TypeDropDown" class="form-control">
-                    <option selected>-- Select option</option>
-                </select>
-                <label style="margin-top: 8px;">Employee Assign&nbsp;</label>
-                <select asp-for="Asign.Status" class="form-control">
-                    <option value="in progress" selected="">in progress</option>
-                    <option value="completed">completed</option>
-                </select>
-            </div>
-          
-                <div class="col-md-3">
-                    <label style="margin-left: 54px;">Tasks&nbsp;</label>
-                    <input asp-for="Asign.Tasks" class="form-control" value="Enter tasks here" style="margin-top: 4px;">
-                
-                    <label style="margin-top: 8px;">Telephone</label>
-                    <input asp-for="Asign.Telephone" value="Type telephone" class="form-control" type="text">
-                    <label tyle="margin-top: 8px;">Address</label>
-                    <input asp-for="Asign.Address" class="form-control" value="enter address" type="text"></div>
-            </div>
-            <button class="btn btn-primary" type="submit" style="margin-top: 35px;margin-left: 34px;">Submit</button>
+        <div class="col-md-3">
+            <label style="margin-left: 8px;"  >Img Url</label>
+            <input asp-for="Asign.ImageUrl"  placeholder="*Optional* Image URl " class="form-control" type="text">
+            
         </div>
-    
+        
+    </div>
+    <button class="btn btn-primary" type="submit" style="margin-top: 35px; margin-left: 34px;">Submit</button>
+       
+
 </form>
+
+<div id="mapContainer" style="height:40vh; width: auto"></div>
+
+
+<script>
+
+
+//***** CORDS  NOMINATION HELPER*******START***********///////
+
+   
+
+
+
+
+        function onSuccess(data) {
+            var obj = JSON.parse(JSON.stringify(data));
+
+            console.log(obj[1]);
+
+        }
+
+        var listUrl = "https://localhost:44333/api/values";
+        $.ajax(listUrl, { type: "GET", data: {}, success: onSuccess });
+
+
+
+
+        var current = 0;
+
+
+
+        function next() {
+
+            function onSuccess(data) {
+                var obj = JSON.parse(JSON.stringify(data));
+                console.log(obj[current]);
+                var image = obj[current].imageUrl;
+                var cust = obj[current];
+
+               
+                $('#name').html( cust.name);
+                $('#task').html( cust.tasks);
+                $('#telephone').html(cust.telephone);
+                $('#address').html( cust.address);
+                $('#imgUrlString').html( cust.imageUrl);
+                $('#imgShow').attr('src', image);
+
+                current = current += 1;
+
+
+
+            }
+
+            var listUrl = "https://localhost:44333/api/values";
+            $.ajax(listUrl, { type: "GET", data: {}, success: onSuccess });
+        }
+
+
+
+
+        function prev() {
+            current = current -= 1;
+            function onSuccess(data) {
+                var obj = JSON.parse(JSON.stringify(data));
+                var cust = obj[current];
+
+              
+                $('#name').html(cust.name);
+                $('#task').html( cust.tasks);
+                $('#telephone').html( cust.telephone);
+                $('#address').html( cust.address);
+                $('#imgUrlString').html( cust.imageUrl);
+                $('#imgShow').html(cust.imageUrl);
+
+
+                console.log(obj[current]);
+
+
+            }
+
+            var listUrl = "https://localhost:44333/api/values";
+            $.ajax(listUrl, { type: "GET", data: {}, success: onSuccess });
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>

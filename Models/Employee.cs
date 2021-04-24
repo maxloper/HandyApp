@@ -10,8 +10,15 @@ namespace HandyApp.Models
     {
         [Key]
         public  int Id { get; set; }
+
+        [Required]
+        [MinLength(2,ErrorMessage ="must be more than 2 letters " )]
+        [MaxLength(20)]
         public string Name { get; set; }
 
+        [Required]
+        [MinLength(4,ErrorMessage ="must be more than 4 letters ")]
+        [MaxLength (30) ]
         public string Speciality { get; set; }
 
 
