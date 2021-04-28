@@ -46,7 +46,7 @@ namespace HandyApp.Controllers
                 _db.Customers.Add(obj);
            
                 _db.SaveChanges();
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Login", "Account");
             }
 
             return View(obj);

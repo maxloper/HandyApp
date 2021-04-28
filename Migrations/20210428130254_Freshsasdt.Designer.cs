@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HandyApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210427153505_fixId")]
-    partial class fixId
+    [Migration("20210428130254_Freshsasdt")]
+    partial class Freshsasdt
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -74,9 +74,6 @@ namespace HandyApp.Migrations
                         .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("UsersName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("employeeNum")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

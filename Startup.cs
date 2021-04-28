@@ -32,6 +32,7 @@ namespace HandyApp
             );
 
             services.AddIdentity<ApplicationUser,IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+            
 
             services.AddControllersWithViews();
         }
@@ -50,6 +51,8 @@ namespace HandyApp
                 app.UseHsts();
             }
 
+
+         
             app.UseAuthentication();
 
             app.UseHttpsRedirection();
@@ -64,8 +67,12 @@ namespace HandyApp
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=account}/{action=login}/{id?}");
             });
+
+
+            
+
         }
     }
 }

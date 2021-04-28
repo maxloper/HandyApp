@@ -12,6 +12,6 @@ namespace HandyApp.Models
 
         public string UsersName { get; set; }
 
-        public string employeeNum { get; set; }
+    
     }
 }

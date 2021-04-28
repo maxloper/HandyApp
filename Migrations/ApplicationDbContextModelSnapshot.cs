@@ -74,9 +74,6 @@ namespace HandyApp.Migrations
                     b.Property<string>("UsersName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("employeeNum")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -88,6 +85,25 @@ namespace HandyApp.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "a9ccbb30-d537-4577-ae0e-34ae07a96abf",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "603c897d-9ebc-4c48-847c-af0aef3ded04",
+                            Email = "tester@test.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "TESTER@TEST.COM",
+                            NormalizedUserName = "TESTER",
+                            PasswordHash = "AQAAAAEAACcQAAAAEGV32DNLKtUsQ3fOwOAtyu8wkr0IFlOoidjTeWWp1HqM3zeFW8uplqTEKoEFGTKK1g==",
+                            PhoneNumber = "123456789",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "c049470f-3870-4649-a20d-775b8a8b0f68",
+                            TwoFactorEnabled = false,
+                            UserName = "tester"
+                        });
                 });
 
             modelBuilder.Entity("HandyApp.Models.Asign", b =>
@@ -207,6 +223,22 @@ namespace HandyApp.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "84c00263-dd07-4ead-8bab-58cb9d4f1ac8",
+                            ConcurrencyStamp = "166162ca-85ab-477c-a76b-33547d791a0b",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = "18206d8c-6965-4577-9a3a-af3342b74a82",
+                            ConcurrencyStamp = "8b725ca7-8134-4b71-857b-84baf9189f01",
+                            Name = "User",
+                            NormalizedName = "USER"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
