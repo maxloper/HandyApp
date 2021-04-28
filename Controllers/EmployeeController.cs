@@ -11,6 +11,9 @@ namespace HandyApp.Controllers
 {
     public class EmployeeController : Controller
     {
+
+
+        // DI for context in controller
         private readonly ApplicationDbContext _db;
 
         public EmployeeController(ApplicationDbContext db)

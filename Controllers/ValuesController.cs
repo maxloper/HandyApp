@@ -10,6 +10,10 @@ using HandyApp.Models;
 
 namespace HandyApp.Controllers
 {
+
+
+    // API for JavaScript calls 
+
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase

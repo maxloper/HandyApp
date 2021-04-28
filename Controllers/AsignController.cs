@@ -13,6 +13,8 @@ namespace HandyApp.Controllers
     public class AsignController : Controller
     {
 
+        // DI for context
+
         private readonly ApplicationDbContext _db;
 
         public AsignController(ApplicationDbContext db)

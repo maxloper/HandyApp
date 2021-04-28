@@ -9,6 +9,7 @@ namespace HandyApp.Models
     public class ApplicationUser:IdentityUser
     {
        
+        // UserName seed for ASP.NET users in identity
 
         public string UsersName { get; set; }
 

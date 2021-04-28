@@ -8,7 +8,7 @@ namespace HandyApp.Models.ViewModels
 {
     public class AsignVM
     {
-
+        // Asign page and drop down Ienum for asign create page
         public Asign Asign { get; set; }
 
         public IEnumerable<SelectListItem> TypeDropDown { get; set; }

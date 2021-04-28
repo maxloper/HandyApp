@@ -8,6 +8,9 @@ namespace HandyApp.Models
 {
     public class Employee
     {
+
+
+        // Employee model
         [Key]
         public  int Id { get; set; }
 

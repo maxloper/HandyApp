@@ -12,6 +12,9 @@ namespace HandyApp.Controllers
 {
     public class AccountController : Controller
     {
+
+
+        // DI for user sign in and managment 
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
 
@@ -29,6 +32,8 @@ namespace HandyApp.Controllers
             return View();
         }
 
+
+        // register post
 
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel vm)
@@ -68,6 +73,8 @@ namespace HandyApp.Controllers
             return View();
         }
 
+
+        // login post
 
         [HttpPost]
 

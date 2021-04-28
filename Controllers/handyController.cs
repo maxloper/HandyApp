@@ -13,7 +13,7 @@ namespace HandyApp.Controllers
     public class handyController : Controller
     {
 
-
+        // DI for context in controller
         private readonly ApplicationDbContext _db;
 
         public handyController(ApplicationDbContext db)

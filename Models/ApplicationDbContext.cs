@@ -15,13 +15,16 @@ namespace HandyApp.Models
         {
 
         }
+
+
+        // DB sets for DB
         public DbSet<Customer> Customers { get; set; }
 
         public DbSet<Asign> Asigns { get; set; }
 
         public DbSet<Employee> Employees { get; set; }
 
-
+        // seed to DB for roles
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
