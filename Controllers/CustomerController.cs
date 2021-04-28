@@ -10,6 +10,8 @@ namespace HandyApp.Controllers
     public class CustomerController : Controller
     {
 
+
+        // DI for context in controller
         private readonly ApplicationDbContext _db;
 
         public CustomerController(ApplicationDbContext db)

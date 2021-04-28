@@ -11,6 +11,8 @@ namespace HandyApp.Models
     public class Asign
     {
 
+        // Asign model 
+
         [Key]
         public int Id { get; set; }
         
