@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using HandyApp.Models;
 using HandyApp.Models.ViewModels;
-
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace HandyApp.Controllers
@@ -20,6 +20,8 @@ namespace HandyApp.Controllers
             _db = db;
         }
 
+
+        [Authorize]
         public IActionResult Index()
         {
 

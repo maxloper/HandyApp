@@ -28,6 +28,6 @@ namespace HandyApp.Models
         public string Address { get; set; }
 
         [Url]
-        public string? ImageUrl { get; set; }
+        public string ImageUrl { get; set; }
     }
 }
