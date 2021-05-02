@@ -12,7 +12,7 @@ namespace HandyApp.Controllers
 {
 
 
-    // API for JavaScript calls 
+    // API for JavaScript calls used in the employee view call for GPS
 
     [Route("api/[controller]")]
     [ApiController]

@@ -22,6 +22,7 @@ namespace HandyApp.Controllers
             _db = db;
         }
 
+        // Admin and employee authorized to this view
 
         [Authorize]
         public IActionResult Index()
