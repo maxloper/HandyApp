@@ -22,6 +22,7 @@ namespace HandyApp.Controllers
             _db = db;
         }
 
+        // auth for employee login 
         [Authorize]
         public IActionResult Index()
         {
