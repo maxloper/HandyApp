@@ -25,25 +25,29 @@
             <div class="container-fluid"><a class="navbar-brand" href="#" style="color: rgb(216,216,216);">&nbsp; <i asp-controller="Home" class="fa fa-connectdevelop"></i>&nbsp; Handy App       Admin</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navcol-1">
                     <ul class="navbar-nav">
-                        @if(User.Identity.IsAuthenticated)
+                        @if (User.Identity.IsAuthenticated)
                         {
-                            if(User.IsInRole("Admin"))
+                            if (User.IsInRole("Admin"))
                             {
-                                 // admin view only of the layout
-                                <li ><a asp-controller="Asign" asp-action="Index" style="margin-left: 72px; color: rgb(216, 216, 216);">&nbsp; Admin Home</a></li>
+                                // admin view only of the layout
+                                <li><a asp-controller="Asign" asp-action="Index" style="margin-left: 72px; color: rgb(216, 216, 216);">&nbsp; Admin Home</a></li>
                                 <li><a asp-controller="Employee" asp-action="Index" style="margin-left: 20px;color: rgb(216,216,216);">Employee List</a></li>
-                        
+
                                 <li><a asp-controller="Customer" asp-action="Index" style="margin-left: 20px;color: rgb(216,216,216);">Customer Jobs</a></li>
+                                <li><a asp-controller="Account" asp-action="Login" style="margin-left: 20px;color: rgb(216,216,216);">Login Page</a></li>
                             }
                         }
-                    <div>@if(User.IsInRole("User"))
-                         {
+                        <div>
+                            @if (User.IsInRole("User"))
+                            {
                                 // for employee view
-                             <a asp-controller="handy" asp-action="Index" style="margin-left: 20px;color: rgb(216,216,216);"> Employees View</a>
-                         }</div>
-               
-                        <li style="margin-left: 70px; color:aliceblue; font-size: 10px">Hello, @User.Identity.Name</li>
-                </ul>
+                                <a asp-controller="handy" asp-action="Index" style="margin-left: 20px;color: rgb(216,216,216);"> Employees View</a>
+                                <a asp-controller="Account" asp-action="Login" style="margin-left: 20px;color: rgb(216,216,216);">Login Page</a>
+                            }
+                    </div>
+
+                    <li style="margin-left: 70px; color:aliceblue; font-size: 10px">Hello, @User.Identity.Name</li>
+                    </ul>
                 </div>
             </div>
         </nav>
